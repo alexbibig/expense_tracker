@@ -28,17 +28,24 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Expense Tracker'),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.add),
+          ),
+        ],
+      ),
       body: Container(
         color: Colors.white30,
-        child: SafeArea(
-          child: Column(
-            children: [
-              const Text('The chart'),
-              Expanded(
-                child: ExpensesList(data: _expensesData),
-              ),
-            ],
-          ),
+        child: Column(
+          children: [
+            const Text('The chart'),
+            Expanded(
+              child: ExpensesList(data: _expensesData),
+            ),
+          ],
         ),
       ),
     );
